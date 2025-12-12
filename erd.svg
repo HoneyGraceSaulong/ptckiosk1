@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    .box { fill:#f8f8ff; stroke:#333; stroke-width:1.2px; }
+    .title { font: bold 12px/14px Arial, sans-serif; }
+    .field { font: 11px/13px monospace; }
+    .arrow { stroke:#444; stroke-width:1.2; marker-end:url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444" />
+    </marker>
+  </defs>
+
+  <!-- Left column -->
+  <g transform="translate(20,20)">
+    <rect class="box" x="0" y="0" width="260" height="120" rx="6"/>
+    <text class="title" x="10" y="18">about</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">mission, vision, history, ...</text>
+    <text class="field" x="10" y="68">president_name, president_image</text>
+    <text class="field" x="10" y="84">last_updated</text>
+  </g>
+
+  <g transform="translate(20,160)">
+    <rect class="box" x="0" y="0" width="260" height="80" rx="6"/>
+    <text class="title" x="10" y="18">admins</text>
+    <text class="field" x="10" y="36">id (PK)  email (UNIQUE)</text>
+    <text class="field" x="10" y="52">name, password</text>
+  </g>
+
+  <g transform="translate(20,260)">
+    <rect class="box" x="0" y="0" width="260" height="70" rx="6"/>
+    <text class="title" x="10" y="18">site_settings</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">title, logo_path, background_path</text>
+  </g>
+
+  <!-- Center column (campuses + maps + offices) -->
+  <g transform="translate(340,20)">
+    <rect class="box" x="0" y="0" width="300" height="80" rx="6"/>
+    <text class="title" x="10" y="18">campuses</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">name, address</text>
+  </g>
+
+  <g transform="translate(340,120)">
+    <rect class="box" x="0" y="0" width="360" height="110" rx="6"/>
+    <text class="title" x="10" y="18">maps</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">campus_id (FK → campuses.id)</text>
+    <text class="field" x="10" y="68">embed_map_link, embed_streetview_link</text>
+    <text class="field" x="10" y="84">embed_html, created_at</text>
+  </g>
+
+  <g transform="translate(340,260)">
+    <rect class="box" x="0" y="0" width="360" height="120" rx="6"/>
+    <text class="title" x="10" y="18">offices</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">campus_id (FK → campuses.id)</text>
+    <text class="field" x="10" y="68">name, description, office_hours</text>
+    <text class="field" x="10" y="84">room, created_at</text>
+  </g>
+
+  <!-- Right column (announcements + academic tables) -->
+  <g transform="translate(740,20)">
+    <rect class="box" x="0" y="0" width="360" height="140" rx="6"/>
+    <text class="title" x="10" y="18">announcements</text>
+    <text class="field" x="10" y="36">id (PK)</text>
+    <text class="field" x="10" y="52">title, content, image_path</text>
+    <text class="field" x="10" y="68">start_date, end_date, is_active</text>
+    <text class="field" x="10" y="84">created_at</text>
+  </g>
+
+  <g transform="translate(740,180)">
+    <rect class="box" x="0" y="0" width="360" height="140" rx="6"/>
+    <text class="title" x="10" y="18">academic (and related)</text>
+    <text class="field" x="10" y="36">academic — id (PK), title, content, created_at</text>
+    <text class="field" x="10" y="56">academic_programs — id, title, content</text>
+    <text class="field" x="10" y="76">academic_requirements — id, title, content</text>
+    <text class="field" x="10" y="96">academic_scholarship — id, title, content</text>
+  </g>
+
+  <!-- Arrows from maps and offices to campuses -->
+  <line class="arrow" x1="400" y1="160" x2="340" y2="60" />
+  <line class="arrow" x1="400" y1="300" x2="340" y2="140" />
+
+  <!-- Labels near arrows -->
+  <text class="field" x="425" y="150">maps.campus_id → campuses.id</text>
+  <text class="field" x="425" y="290">offices.campus_id → campuses.id</text>
+
+  <!-- Footer note -->
+  <text class="field" x="10" y="860">Generated from provided SQL dump — primary keys noted and known foreign keys (offices.campus_id, maps.campus_id). Save as PNG with an SVG-to-PNG converter.</text>
+</svg>

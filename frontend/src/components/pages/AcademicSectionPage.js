@@ -6,10 +6,11 @@ import Scholarship from '../AcademicSections/Scholarship/Scholarship';
 import './AcademicInfo.css';
 
 const sectionTitleMap = {
-  requirements: 'Procedures & Requirements',
-  programs: 'Offered Programs',
-  scholarship: 'Scholarship'
+  requirements: <span className="section-titlemap">Procedures & Requirements</span>,
+  programs: <span className="section-titlemap">Offered Programs</span>,
+  scholarship: <span className="section-titlemap">Scholarship</span>
 };
+
 
 export default function AcademicSectionPage() {
   const { section } = useParams();
@@ -35,13 +36,13 @@ export default function AcademicSectionPage() {
             onKeyDown={(e) => e.key === 'Enter' && navigate('/')}
             tabIndex={0}
             className="embedded-title"
-          >Pateros Technological College</span>
+          >Pateros Technological College ←</span>
         </div>
 
         <div className="outer-card">
           <div className="attached-card">
             <div className="academic-info-header attached" role="button" tabIndex={0} onClick={() => navigate('/academic')} onKeyDown={(e) => e.key === 'Enter' && navigate('/academic')}>
-              <button className="back-btn" onClick={(e) => { e.stopPropagation(); navigate('/academic'); }} aria-label="Back to selections">←</button>
+              <button className="back-btn" onClick={(e) => { e.stopPropagation(); navigate('/academic'); }} aria-label="Back to selections">◀</button>
               <h2>Academic Information</h2>
             </div>
             <div className="program-card" style={{ margin: 18 }}>

@@ -139,7 +139,7 @@ export default function OfficeDirectory() {
         <div className="office-embedded-header">
           <img src="/ptcround.png" alt="PTC Logo" className="office-embedded-logo" />
           <span onClick={() => navigate("/")} className="office-embedded-title">
-            Pateros Technological College
+            Pateros Technological College ←
           </span>
         </div>
         

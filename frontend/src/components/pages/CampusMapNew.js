@@ -94,7 +94,7 @@ export default function CampusMap() {
             role="button"
             aria-label="Go to homepage"
           >
-            Pateros Technological College
+            Pateros Technological College ←
           </span>
         </div>
 

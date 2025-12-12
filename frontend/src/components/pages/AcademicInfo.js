@@ -19,7 +19,7 @@ export default function AcademicInfo() {
             onKeyDown={(e) => e.key === 'Enter' && navigate('/')}
             tabIndex={0}
             className="embedded-title"
-          >Pateros Technological College</span>
+          >Pateros Technological College ←</span>
         </div>
 
         <div className="outer-card">
@@ -34,7 +34,7 @@ export default function AcademicInfo() {
               <button className="select-btn" onClick={() => navigate('/academic/programs')}>Offered Programs</button>
               <button className="select-btn" onClick={() => navigate('/academic/scholarship')}>Scholarship</button>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </div>

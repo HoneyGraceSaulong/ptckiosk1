@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../pages/AcademicInfo.css';
 
-function truncate(text, length = 140) {
-  if (!text) return '';
-  return text.length > length ? text.slice(0, length).trim() + '…' : text;
-}
+
 
 export default function RequirementsProcedure() {
   const [items, setItems] = useState([]);
@@ -56,8 +53,6 @@ export default function RequirementsProcedure() {
               <div key={it.id} className="nested-item" role="button" tabIndex={0}
                    onClick={() => openModal(it)} onKeyDown={(e) => e.key === 'Enter' && openModal(it)}>
                 <h4>{it.title}</h4>
-                <p>{truncate(it.content, 140)}</p>
-                {it.created_at && <div className="item-footer">{new Date(it.created_at).toLocaleDateString()}</div>}
               </div>
             ))
           )

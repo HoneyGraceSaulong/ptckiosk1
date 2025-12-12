@@ -121,7 +121,7 @@ export default function Announcements() {
             tabIndex={0}
             className="embedded-title"
           >
-            Pateros Technological College
+            Pateros Technological College ←
           </span>
         </div>
 
@@ -163,11 +163,9 @@ export default function Announcements() {
                       <p>{ann.content}</p>
                       <div className="dates">
                         <span>
-                          <strong>Start:</strong> {formatDate(ann.start_date)}
+                          <strong>Date Posted:</strong> {formatDate(ann.start_date)}
                         </span>
-                        <span>
-                          <strong>End:</strong> {formatDate(ann.end_date)}
-                        </span>
+                        
                       </div>
                     </div>
                   ))}
@@ -188,11 +186,9 @@ export default function Announcements() {
                   <h2 id="modal-title">{selectedAnnouncement.title}</h2>
                   <div className="announcements-modal-dates">
                     <span>
-                      <strong>Start:</strong> {formatDate(selectedAnnouncement.start_date)}
+                      <strong>Date Posted:</strong> {formatDate(selectedAnnouncement.start_date)}
                     </span>
-                    <span>
-                      <strong>End:</strong> {formatDate(selectedAnnouncement.end_date)}
-                    </span>
+                    
                   </div>
                   <div className="announcements-modal-body">
                     {selectedAnnouncement.image_path && (

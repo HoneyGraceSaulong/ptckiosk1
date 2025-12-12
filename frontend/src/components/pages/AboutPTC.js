@@ -80,7 +80,7 @@ export default function AboutPTC() {
         <div className="about-embedded-header">
           <img src="/ptcround.png" alt="PTC Logo" className="about-embedded-logo" />
           <span onClick={() => navigate("/")} className="about-embedded-title">
-            Pateros Technological College
+            Pateros Technological College ←
           </span>
         </div>
         {/* Split into multiple full-height sections with smart scroll */}
